@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Visibilidad</title>
+    <style>
+        .caja {
+            padding: 20px;
+            border: 2px solid #333;
+            background-color: lightcoral;
+            visibility: visible; /* Estado inicial: visible */
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="caja" id="miCaja">Este es un contenido que se puede ocultar o mostrar.</div>
+    <button id="toggleVisibilidad">Ocultar/Mostrar</button>
+
+    <script>
+        // Seleccionamos el botón y el div
+        const boton = document.getElementById('toggleVisibilidad');
+        const caja = document.getElementById('miCaja');
+
+        // Agregamos un evento de clic para alternar la visibilidad
+        boton.addEventListener('click', function() {
+            // Verificamos el estado actual de la visibilidad
+            if (caja.style.visibility === 'visible' || caja.style.visibility === '') {
+                caja.style.visibility = 'hidden';  // Ocultar el elemento
+            } else {
+                caja.style.visibility = 'visible';  // Mostrar el elemento
+            }
+        });
+    </script>
+</body>
+</html>

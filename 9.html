@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remover Elementos</title>
+    <style>
+        .elemento {
+            padding: 10px;
+            margin: 10px 0;
+            background-color: lightgreen;
+            border: 1px solid green;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div class="elemento" id="elemento1">Elemento 1</div>
+        <div class="elemento" id="elemento2">Elemento 2</div>
+        <div class="elemento" id="elemento3">Elemento 3</div>
+    </div>
+    <button id="removerElemento1">Remover Elemento 1</button>
+    <button id="removerUltimoElemento">Remover Último Elemento</button>
+
+    <script>
+        // Seleccionamos el contenedor
+        const contenedor = document.getElementById('contenedor');
+
+        // Remover un elemento específico con remove()
+        document.getElementById('removerElemento1').addEventListener('click', function() {
+            const elemento1 = document.getElementById('elemento1');
+            elemento1.remove(); // Elimina el primer elemento
+        });
+
+        // Remover el último hijo del contenedor con removeChild()
+        document.getElementById('removerUltimoElemento').addEventListener('click', function() {
+            const ultimoElemento = contenedor.lastElementChild;
+            if (ultimoElemento) {
+                contenedor.removeChild(ultimoElemento); // Elimina el último elemento
+            }
+        });
+    </script>
+</body>
+</html>

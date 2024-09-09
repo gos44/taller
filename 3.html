@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Texto</title>
+    <style>
+        .texto-modificable {
+            padding: 10px;
+            border: 1px solid #333;
+            margin: 10px 0;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="texto-modificable" id="miTexto">Este es el texto original.</div>
+    <button id="modificarTexto">Modificar Texto</button>
+
+    <script>
+        // Seleccionamos el botón y el div con el texto
+        const boton = document.getElementById('modificarTexto');
+        const texto = document.getElementById('miTexto');
+
+        // Agregamos un evento de clic para modificar el texto
+        boton.addEventListener('click', function() {
+            // Cambiar el contenido del div
+            texto.textContent = 'El texto ha sido modificado.';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clonación y Reemplazo de Elementos</title>
+    <style>
+        .elemento {
+            padding: 10px;
+            margin: 10px 0;
+            background-color: lightblue;
+            border: 1px solid blue;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div class="elemento" id="elemento1">Elemento 1</div>
+        <div class="elemento" id="elemento2">Elemento 2</div>
+    </div>
+    <button id="clonarElemento">Clonar Elemento 1</button>
+    <button id="reemplazarElemento2">Reemplazar Elemento 2</button>
+
+    <script>
+        // Seleccionamos los elementos necesarios
+        const contenedor = document.getElementById('contenedor');
+        const elemento1 = document.getElementById('elemento1');
+        const elemento2 = document.getElementById('elemento2');
+
+        // Función para clonar el primer elemento
+        document.getElementById('clonarElemento').addEventListener('click', function() {
+            // Clonamos el elemento1 (true incluye los nodos hijos si los hubiera)
+            const clon = elemento1.cloneNode(true);
+            clon.textContent = 'Este es un clon del Elemento 1'; // Cambiar el contenido del clon
+            contenedor.appendChild(clon); // Agregar el clon al contenedor
+        });
+
+        // Función para reemplazar el segundo elemento
+        document.getElementById('reemplazarElemento2').addEventListener('click', function() {
+            // Crear un nuevo elemento que va a reemplazar al elemento2
+            const nuevoElemento = document.createElement('div');
+            nuevoElemento.classList.add('elemento');
+            nuevoElemento.textContent = 'Este es un nuevo elemento que reemplaza al Elemento 2';
+            
+            // Reemplazamos elemento2 con nuevoElemento
+            contenedor.replaceChild(nuevoElemento, elemento2);
+        });
+    </script>
+</body>
+</html>

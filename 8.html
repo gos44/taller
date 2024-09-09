@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Elemento con createElement()</title>
+    <style>
+        .nuevo-elemento {
+            padding: 10px;
+            margin-top: 10px;
+            border: 2px solid blue;
+            background-color: lightyellow;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <p>Este es un contenedor existente.</p>
+    </div>
+    <button id="agregarElemento">Agregar Nuevo Elemento</button>
+
+    <script>
+        // Seleccionamos el botón y el contenedor donde agregaremos los nuevos elementos
+        const boton = document.getElementById('agregarElemento');
+        const contenedor = document.getElementById('contenedor');
+
+        // Función para crear un nuevo elemento
+        function agregarNuevoElemento() {
+            // Crear un nuevo elemento div
+            const nuevoDiv = document.createElement('div');
+            // Agregar una clase al nuevo div
+            nuevoDiv.classList.add('nuevo-elemento');
+            // Agregar contenido de texto al nuevo div
+            nuevoDiv.textContent = 'Este es un nuevo elemento creado dinámicamente.';
+
+            // Insertar el nuevo elemento dentro del contenedor
+            contenedor.appendChild(nuevoDiv);
+        }
+
+        // Evento para ejecutar la función cuando se haga clic en el botón
+        boton.addEventListener('click', agregarNuevoElemento);
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos y Listeners</title>
+    <style>
+        .caja {
+            padding: 20px;
+            border: 2px solid blue;
+            background-color: lightyellow;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="caja" id="miCaja">Haz clic en este cuadro.</div>
+    <button id="miBoton">Haz clic en este botón</button>
+    <input type="text" id="miInput" placeholder="Escribe algo aquí">
+
+    <script>
+        // Seleccionamos los elementos del DOM
+        const caja = document.getElementById('miCaja');
+        const boton = document.getElementById('miBoton');
+        const input = document.getElementById('miInput');
+
+        // Evento de clic en el div
+        caja.addEventListener('click', function() {
+            caja.style.backgroundColor = 'lightcoral'; // Cambia el color de fondo al hacer clic
+            alert('¡Has hecho clic en la caja!');
+        });
+
+        // Evento de clic en el botón
+        boton.addEventListener('click', function() {
+            boton.textContent = '¡Has hecho clic en el botón!'; // Cambia el texto del botón
+        });
+
+        // Evento de entrada en el campo de texto
+        input.addEventListener('input', function() {
+            console.log('Texto actual:', input.value); // Muestra el texto en la consola
+        });
+    </script>
+</body>
+</html>

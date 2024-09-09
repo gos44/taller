@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegación entre nodos</title>
+    <style>
+        .nodo {
+            padding: 10px;
+            border: 1px solid #333;
+            margin: 5px 0;
+        }
+        #resultado {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #999;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="nodo" id="nodo1">Nodo 1</div>
+    <div class="nodo" id="nodo2">Nodo 2</div>
+    <div class="nodo" id="nodo3">Nodo 3</div>
+
+    <button id="navegarHermanos">Navegar Hermanos</button>
+    <button id="navegarPadre">Mostrar Padre</button>
+
+    <div id="resultado">Resultado</div>
+
+    <script>
+        // Seleccionamos los nodos
+        const nodo2 = document.getElementById('nodo2');
+        const resultado = document.getElementById('resultado');
+
+        // Botón para navegar entre hermanos
+        document.getElementById('navegarHermanos').addEventListener('click', function() {
+            const nodoPrevio = nodo2.previousElementSibling;  // Hermano anterior
+            const nodoSiguiente = nodo2.nextElementSibling;   // Hermano siguiente
+
+            let texto = '';
+            if (nodoPrevio) {
+                texto += 'Hermano anterior: ' + nodoPrevio.textContent + '<br>';
+            } else {
+                texto += 'No hay hermano anterior.<br>';
+            }
+
+            if (nodoSiguiente) {
+                texto += 'Hermano siguiente: ' + nodoSiguiente.textContent + '<br>';
+            } else {
+                texto += 'No hay hermano siguiente.<br>';
+            }
+
+            resultado.innerHTML = texto;
+        });
+
+        // Botón para mostrar el padre de un nodo
+        document.getElementById('navegarPadre').addEventListener('click', function() {
+            const padre = nodo2.parentNode; // Nodo padre
+            resultado.innerHTML = 'El nodo padre es: ' + padre.nodeName;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Estilos</title>
+    <style>
+        .caja {
+            padding: 20px;
+            border: 2px solid #333;
+            background-color: lightgray;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="caja" id="miCaja">Este es un texto dentro de una caja.</div>
+    <button id="modificarEstilos">Modificar Estilos</button>
+
+    <script>
+        // Seleccionamos el botón y el div
+        const boton = document.getElementById('modificarEstilos');
+        const caja = document.getElementById('miCaja');
+
+        // Agregamos un evento de clic para modificar los estilos
+        boton.addEventListener('click', function() {
+            // Cambiamos los estilos del div
+            caja.style.backgroundColor = 'lightblue';  // Cambiar color de fondo
+            caja.style.color = 'white';                // Cambiar color de texto
+            caja.style.fontSize = '24px';              // Cambiar tamaño de fuente
+            caja.style.border = '4px solid red';       // Cambiar borde
+            caja.style.padding = '30px';               // Cambiar padding
+        });
+    </script>
+</body>
+</html>

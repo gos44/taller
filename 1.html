@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta del DOM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .content {
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid #333;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content" id="miDiv">Este es un texto dentro de un div.</div>
+    <button id="cambiarTexto">Cambiar texto</button>
+
+    <script>
+        // Seleccionando el botón y el div por su ID
+        const boton = document.getElementById('cambiarTexto');
+        const div = document.getElementById('miDiv');
+
+        // Agregando un evento al botón
+        boton.addEventListener('click', function() {
+            // Modificando el contenido del div
+            div.textContent = 'El texto ha sido cambiado con JavaScript';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertar Elemento</title>
+    <style>
+        .caja {
+            padding: 10px;
+            border: 1px solid #333;
+            background-color: lightblue;
+            margin-bottom: 10px;
+        }
+        .nueva-caja {
+            padding: 10px;
+            background-color: lightgreen;
+            border: 1px solid green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="caja" id="miDiv">Este es un div existente.</div>
+    <button id="insertarElemento">Insertar Elemento</button>
+
+    <script>
+        // Seleccionamos el botón y el div
+        const boton = document.getElementById('insertarElemento');
+        const divExistente = document.getElementById('miDiv');
+
+        // Función para crear un nuevo elemento
+        function crearNuevoElemento() {
+            // Crear un nuevo div
+            const nuevoDiv = document.createElement('div');
+            nuevoDiv.classList.add('nueva-caja');
+            
+            // Crear un string que será el contenido del nuevo div
+            const nuevoTexto = 'Este es un nuevo elemento insertado con insertAdjacentElement.';
+            
+            // Asignar el string como el texto del nuevo div
+            nuevoDiv.textContent = nuevoTexto;
+
+            return nuevoDiv;
+        }
+
+        // Agregar evento al botón para insertar el nuevo elemento
+        boton.addEventListener('click', function() {
+            // Llamamos a la función que crea un nuevo div
+            const nuevoElemento = crearNuevoElemento();
+            
+            // Insertamos el nuevo div antes del div existente
+            divExistente.insertAdjacentElement('beforebegin', nuevoElemento);
+        });
+    </script>
+</body>
+</html>

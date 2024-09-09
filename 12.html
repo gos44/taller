@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos y Objeto de Evento</title>
+    <style>
+        .caja {
+            padding: 20px;
+            border: 2px solid blue;
+            background-color: lightyellow;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="caja" id="miCaja">Haz clic en esta caja.</div>
+    <button id="miBoton">Haz clic en este botón</button>
+    <input type="text" id="miInput" placeholder="Escribe algo aquí">
+
+    <script>
+        // Seleccionamos los elementos del DOM
+        const caja = document.getElementById('miCaja');
+        const boton = document.getElementById('miBoton');
+        const input = document.getElementById('miInput');
+
+        // Evento de clic en el div
+        caja.addEventListener('click', function(event) {
+            console.log('Tipo de evento:', event.type); // Muestra el tipo de evento
+            console.log('Elemento objetivo:', event.target); // Muestra el elemento que recibió el clic
+            console.log('Posición del ratón:', `X: ${event.clientX}, Y: ${event.clientY}`); // Muestra la posición del ratón
+            caja.style.backgroundColor = 'lightcoral'; // Cambia el color de fondo
+        });
+
+        // Evento de clic en el botón
+        boton.addEventListener('click', function(event) {
+            console.log('Tipo de evento:', event.type); // Muestra el tipo de evento
+            console.log('Elemento objetivo:', event.target); // Muestra el elemento que recibió el clic
+            boton.textContent = '¡Has hecho clic en el botón!'; // Cambia el texto del botón
+        });
+
+        // Evento de entrada en el campo de texto
+        input.addEventListener('input', function(event) {
+            console.log('Texto actual:', event.target.value); // Muestra el texto actual en el campo de entrada
+        });
+    </script>
+</body>
+</html>
